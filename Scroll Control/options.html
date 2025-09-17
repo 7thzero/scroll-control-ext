@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Control Options</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 20px; 
+      max-width: 600px;
+      font-size: 16px;
+    }
+    .section { margin-bottom: 30px; }
+    label { 
+      display: block; 
+      margin-bottom: 8px; 
+      font-weight: bold;
+      font-size: 16px;
+    }
+    input, textarea { 
+      width: 100%; 
+      padding: 12px; 
+      margin-bottom: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button { 
+      background: #4CAF50; 
+      color: white; 
+      padding: 12px 20px; 
+      border: none; 
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    button:hover { background: #45a049; }
+    .website-list { 
+      height: 150px; 
+      resize: vertical;
+    }
+    small {
+      font-size: 14px;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      body { margin: 10px; }
+      .section { margin-bottom: 20px; }
+      button { width: 100%; margin-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Scroll Control Settings</h1>
+
+  <div class="section">
+    <label for="scrollLimit">Maximum Scroll Count:</label>
+    <input type="number" id="scrollLimit" min="1" max="50" value="5">
+    <small>Number of times you can scroll down before being blocked</small>
+  </div>
+
+  <div class="section">
+    <label for="websites">Websites to Limit (one per line):</label>
+    <textarea id="websites" class="website-list" placeholder="facebook.com&#10;reddit.com&#10;twitter.com&#10;instagram.com"></textarea>
+    <small>Enter domain names without http:// or www.</small>
+  </div>
+
+  <button id="save">Save Settings</button>
+  <button id="reset">Reset to Defaults</button>
+
+  <div id="status" style="margin-top: 15px; color: green; font-size: 16px;"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
